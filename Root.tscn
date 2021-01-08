@@ -1,9 +1,325 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Root.gd" type="Script" id=1]
-[ext_resource path="res://Albright/Albright.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels-Basic/11-TPath/11TJunction.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/BarBackdrop.tres" type="StyleBox" id=3]
+[ext_resource path="res://UI/BaseTheme.tres" type="Theme" id=4]
+[ext_resource path="res://UI/Buttons/Buttons-001.png" type="Texture" id=5]
+[ext_resource path="res://UI/Buttons/swordwomanSmall.png" type="Texture" id=6]
+[ext_resource path="res://UI/Buttons/jump-across.png" type="Texture" id=7]
+[ext_resource path="res://UI/Buttons/Buttons-009.png" type="Texture" id=8]
+[ext_resource path="res://UI/Buttons/Buttons-011.png" type="Texture" id=9]
+[ext_resource path="res://UI/Buttons/Buttons-007.png" type="Texture" id=10]
+[ext_resource path="res://UI/Buttons/Buttons-005.png" type="Texture" id=11]
+[ext_resource path="res://UI/Buttons/Buttons-003.png" type="Texture" id=12]
+[ext_resource path="res://UI/Buttons/Buttons-012.png" type="Texture" id=13]
+[ext_resource path="res://UI/Buttons/Buttons-010.png" type="Texture" id=14]
+[ext_resource path="res://UI/Buttons/sword-spin.png" type="Texture" id=15]
+[ext_resource path="res://UI/Buttons/closed-doors.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.74902, 0.0627451, 0.0627451, 1 )
+border_color = Color( 0.0196078, 0.580392, 0.972549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 4
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0627451, 0.576471, 0.0313726, 1 )
+border_color = Color( 0.0196078, 0.580392, 0.972549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 4
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.294118, 0.0627451, 0.74902, 1 )
+border_color = Color( 0.0196078, 0.580392, 0.972549, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 4
 
 [node name="Root" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Albright" parent="." instance=ExtResource( 2 )]
+[node name="11TJunction" parent="." instance=ExtResource( 2 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 32.7962
+rect_pivot_offset = Vector2( 190.7, 29 )
+theme = ExtResource( 4 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = ExtResource( 3 )
+value = 50.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar2" type="ProgressBar" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 96.0
+margin_bottom = 80.7962
+rect_pivot_offset = Vector2( 190.7, 29 )
+theme = ExtResource( 4 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = ExtResource( 3 )
+value = 50.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar3" type="ProgressBar" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 96.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 190.7, 29 )
+theme = ExtResource( 4 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = ExtResource( 3 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchor_left = 0.086
+anchor_top = 0.413
+anchor_right = 0.086
+anchor_bottom = 0.413
+margin_left = 119.936
+margin_top = 88.2
+margin_right = 343.936
+margin_bottom = 152.2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = -4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LT" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_right = 31.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LT"]
+margin_right = 31.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LT"]
+margin_top = 32.0
+margin_right = 31.0
+margin_bottom = 56.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LB" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 27.0
+margin_right = 59.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LB"]
+margin_right = 32.0
+margin_bottom = 16.0
+texture = ExtResource( 8 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LB"]
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 55.0
+margin_right = 86.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/A"]
+margin_right = 31.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/A"]
+margin_top = 16.0
+margin_right = 31.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="B" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 82.0
+margin_right = 114.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/B"]
+margin_right = 32.0
+margin_bottom = 16.0
+texture = ExtResource( 10 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/B"]
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Y" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 110.0
+margin_right = 141.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/Y"]
+margin_right = 31.0
+margin_bottom = 16.0
+texture = ExtResource( 11 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/Y"]
+margin_top = 16.0
+margin_right = 31.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 137.0
+margin_right = 168.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/X"]
+margin_right = 31.0
+margin_bottom = 16.0
+texture = ExtResource( 12 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/X"]
+margin_top = 16.0
+margin_right = 31.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RB" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 164.0
+margin_right = 196.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RB"]
+margin_right = 32.0
+margin_bottom = 16.0
+texture = ExtResource( 14 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RB"]
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 40.0
+texture = ExtResource( 16 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RT" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
+margin_left = 192.0
+margin_right = 224.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RT"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RT"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 56.0
+texture = ExtResource( 15 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}

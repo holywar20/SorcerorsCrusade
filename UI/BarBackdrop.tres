@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://Tilesets/MainCastleTiles.png" type="Texture" id=1]
+
+[resource]
+texture = ExtResource( 1 )
+region_rect = Rect2( 240, 896, 160, 32 )
+margin_right = 0.66342
+margin_bottom = 1.79621
+modulate_color = Color( 0.8, 0.8, 0.8, 1 )
