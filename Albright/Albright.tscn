@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Albright/Albright.gd" type="Script" id=1]
 [ext_resource path="res://Albright/AlbrightSpriteFrames.tres" type="SpriteFrames" id=2]
@@ -328,7 +328,7 @@ tracks/0/keys = {
 "values": [ 84, 88 ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=21]
 resource_name = "SLIDING"
 length = 0.4
 loop = true
@@ -345,147 +345,131 @@ tracks/0/keys = {
 "values": [ 86, 89 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=59]
+[sub_resource type="AnimationNodeAnimation" id=22]
 animation = "CROUCHED"
 
-[sub_resource type="AnimationNodeAnimation" id=60]
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "CROUCHED_START"
 
-[sub_resource type="AnimationNodeAnimation" id=53]
-animation = "DASH"
-
-[sub_resource type="AnimationNodeAnimation" id=54]
-animation = "DASH_START"
-
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "ATTACK_BASIC"
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=27]
 animation = "FALL"
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "IDLE"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=29]
 animation = "JUMP"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=30]
 animation = "JUMP_STALL"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=31]
 animation = "ATTACK_HEAVY"
 
-[sub_resource type="AnimationNodeAnimation" id=27]
+[sub_resource type="AnimationNodeAnimation" id=32]
 animation = "RUN"
 
-[sub_resource type="AnimationNodeAnimation" id=44]
+[sub_resource type="AnimationNodeAnimation" id=33]
 animation = "SLIDE_END"
 
-[sub_resource type="AnimationNodeAnimation" id=45]
+[sub_resource type="AnimationNodeAnimation" id=34]
 animation = "SLIDE_START"
 
-[sub_resource type="AnimationNodeAnimation" id=50]
+[sub_resource type="AnimationNodeAnimation" id=35]
 animation = "SLIDING"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=30]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=31]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=32]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=36]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=37]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=38]
 switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
 switch_mode = 2
-auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=46]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=51]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=55]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=56]
 switch_mode = 2
 auto_advance = true
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=57]
+switch_mode = 2
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=58]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=61]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=62]
-switch_mode = 2
-auto_advance = true
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=63]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=64]
-switch_mode = 2
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachine" id=41]
-states/CROUCHED/node = SubResource( 59 )
+[sub_resource type="AnimationNodeStateMachine" id=59]
+states/CROUCHED/node = SubResource( 22 )
 states/CROUCHED/position = Vector2( 231, 36 )
-states/CROUCHED_START/node = SubResource( 60 )
+states/CROUCHED_START/node = SubResource( 23 )
 states/CROUCHED_START/position = Vector2( 78.3333, 120 )
-states/DASH/node = SubResource( 53 )
-states/DASH/position = Vector2( 756.333, -172.667 )
-states/DASH_START/node = SubResource( 54 )
-states/DASH_START/position = Vector2( 702.667, -40.6914 )
-states/DEFENSIVE_GROUND_ATTACK/node = SubResource( 21 )
+states/DEFENSIVE_GROUND_ATTACK/node = SubResource( 26 )
 states/DEFENSIVE_GROUND_ATTACK/position = Vector2( -39.6663, 289.782 )
-states/FALL/node = SubResource( 23 )
-states/FALL/position = Vector2( 367.893, -223.666 )
-states/IDLE/node = SubResource( 24 )
-states/IDLE/position = Vector2( 368.484, 128.374 )
-states/JUMP/node = SubResource( 25 )
-states/JUMP/position = Vector2( 486.111, -0.0370522 )
-states/JUMP_STALL/node = SubResource( 26 )
-states/JUMP_STALL/position = Vector2( 472.556, -126.235 )
-states/OFFENSIVE_GROUND_ATTACK/node = SubResource( 22 )
+states/FALL/node = SubResource( 27 )
+states/FALL/position = Vector2( 358.56, -120.333 )
+states/IDLE/node = SubResource( 28 )
+states/IDLE/position = Vector2( 375.151, 126.374 )
+states/JUMP/node = SubResource( 29 )
+states/JUMP/position = Vector2( 529.444, -140.704 )
+states/JUMP_STALL/node = SubResource( 30 )
+states/JUMP_STALL/position = Vector2( 513.223, -244.902 )
+states/OFFENSIVE_GROUND_ATTACK/node = SubResource( 31 )
 states/OFFENSIVE_GROUND_ATTACK/position = Vector2( 141.209, 401.072 )
-states/RUN/node = SubResource( 27 )
+states/RUN/node = SubResource( 32 )
 states/RUN/position = Vector2( 579.852, 120.258 )
-states/SLIDE_END/node = SubResource( 44 )
+states/SLIDE_END/node = SubResource( 33 )
 states/SLIDE_END/position = Vector2( 580, 400.17 )
-states/SLIDE_START/node = SubResource( 45 )
+states/SLIDE_START/node = SubResource( 34 )
 states/SLIDE_START/position = Vector2( 677.111, 232.667 )
-states/SLIDING/node = SubResource( 50 )
+states/SLIDING/node = SubResource( 35 )
 states/SLIDING/position = Vector2( 666, 314.778 )
-transitions = [ "IDLE", "DEFENSIVE_GROUND_ATTACK", SubResource( 28 ), "DEFENSIVE_GROUND_ATTACK", "IDLE", SubResource( 29 ), "OFFENSIVE_GROUND_ATTACK", "IDLE", SubResource( 30 ), "IDLE", "OFFENSIVE_GROUND_ATTACK", SubResource( 31 ), "IDLE", "RUN", SubResource( 32 ), "RUN", "IDLE", SubResource( 33 ), "RUN", "JUMP", SubResource( 36 ), "IDLE", "JUMP", SubResource( 37 ), "JUMP", "JUMP_STALL", SubResource( 38 ), "FALL", "IDLE", SubResource( 39 ), "JUMP_STALL", "FALL", SubResource( 40 ), "RUN", "SLIDE_START", SubResource( 46 ), "SLIDE_START", "SLIDING", SubResource( 51 ), "SLIDING", "SLIDE_END", SubResource( 52 ), "JUMP", "DASH_START", SubResource( 55 ), "DASH_START", "DASH", SubResource( 56 ), "DASH", "JUMP", SubResource( 57 ), "DASH_START", "FALL", SubResource( 58 ), "IDLE", "CROUCHED_START", SubResource( 61 ), "CROUCHED_START", "CROUCHED", SubResource( 62 ), "CROUCHED", "IDLE", SubResource( 63 ), "SLIDE_END", "IDLE", SubResource( 64 ) ]
+transitions = [ "IDLE", "DEFENSIVE_GROUND_ATTACK", SubResource( 36 ), "DEFENSIVE_GROUND_ATTACK", "IDLE", SubResource( 37 ), "OFFENSIVE_GROUND_ATTACK", "IDLE", SubResource( 38 ), "IDLE", "OFFENSIVE_GROUND_ATTACK", SubResource( 39 ), "IDLE", "RUN", SubResource( 40 ), "RUN", "IDLE", SubResource( 41 ), "RUN", "JUMP", SubResource( 42 ), "IDLE", "JUMP", SubResource( 43 ), "JUMP", "JUMP_STALL", SubResource( 44 ), "FALL", "IDLE", SubResource( 45 ), "JUMP_STALL", "FALL", SubResource( 46 ), "RUN", "SLIDE_START", SubResource( 47 ), "SLIDE_START", "SLIDING", SubResource( 48 ), "SLIDING", "SLIDE_END", SubResource( 49 ), "IDLE", "CROUCHED_START", SubResource( 54 ), "CROUCHED_START", "CROUCHED", SubResource( 55 ), "CROUCHED", "IDLE", SubResource( 56 ), "SLIDE_END", "IDLE", SubResource( 57 ), "IDLE", "FALL", SubResource( 58 ), "RUN", "FALL", SubResource( 63 ) ]
 start_node = "IDLE"
-graph_offset = Vector2( -282, -134 )
+graph_offset = Vector2( -446, -329 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=42]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=60]
 
-[sub_resource type="CapsuleShape2D" id=43]
+[sub_resource type="CapsuleShape2D" id=61]
 radius = 8.71959
 height = 13.493
 
-[sub_resource type="DynamicFont" id=65]
+[sub_resource type="DynamicFont" id=62]
 outline_size = 1
 outline_color = Color( 0.411765, 0.0941176, 0.431373, 1 )
 font_data = ExtResource( 3 )
@@ -501,7 +485,6 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 8.80781, -22.0367 )
 frames = ExtResource( 2 )
-frame = 66
 speed_scale = 0.2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -526,17 +509,17 @@ anims/JUMP_STALL = SubResource( 17 )
 anims/RUN = SubResource( 18 )
 anims/SLIDE_END = SubResource( 19 )
 anims/SLIDE_START = SubResource( 20 )
-anims/SLIDING = SubResource( 49 )
+anims/SLIDING = SubResource( 21 )
 
 [node name="AnimationTree" type="AnimationTree" parent="AnimatedSprite"]
-tree_root = SubResource( 41 )
+tree_root = SubResource( 59 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 42 )
+parameters/playback = SubResource( 60 )
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 position = Vector2( 2.125, -17.7322 )
-shape = SubResource( 43 )
+shape = SubResource( 61 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -50 )
@@ -559,7 +542,7 @@ margin_left = -26.0
 margin_top = -49.0
 margin_right = 32.0
 margin_bottom = -30.0
-custom_fonts/font = SubResource( 65 )
+custom_fonts/font = SubResource( 62 )
 text = "{STATE}"
 __meta__ = {
 "_edit_use_anchors_": false

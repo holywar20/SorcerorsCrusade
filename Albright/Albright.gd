@@ -20,10 +20,12 @@ const GROUND_FRICTION = 60
 const SLIDE_FRICTION = 15
 const AIR_FRICTION = 5
 
-const GRAVITY = 40
+const GRAVITY = 30
 const TERMINAL_VELOCITY = 600
 const SLIDE_FORCE_ADD = 400
-const JUMPFORCE = -900
+const JUMPFORCE = -800
+
+const RUNNING_GROUND_ATTACK_FORCE = 700
 
 const LOOK_UP_ACCELERATION = 90
 const LOOK_UP_MAX_HEIGHT = 200
@@ -47,8 +49,6 @@ func _physics_process(delta : float):
 
 	var currentState = stateMachine.get_current_node()
 	stateName.set_text( currentState )
-
-	print( velocity , " : " , currentState , " : " , inputVector )
 
 	if( velocity.y > 1 ):
 		fall()
@@ -135,12 +135,10 @@ func whileJump( inputVector: Vector2 ) -> void:
 	elif( velocity.x < 0 ):
 		sprite.flip_h = true
 
-	if( is_on_floor() && velocity.x == 0 ):
+	if( is_on_floor() ):
 		idle()
 	elif( velocity.y < 0 ):
 		fall()
-	elif Input.is_action_pressed("OFFENSIVE_ACTION"):
-		offensiveGroundAttack()
 
 	_applyAcceleration( inputVector , AIR_ACCELERATION )
 
@@ -154,8 +152,8 @@ func whileFall( inputVector: Vector2 ) -> void:
 
 	if( is_on_floor() ):
 		idle()
-
-	_applyAcceleration( inputVector , AIR_ACCELERATION )
+	else:
+		_applyAcceleration( inputVector , AIR_ACCELERATION )
 
 func whileSlide( inputVector : Vector2 ) -> void:
 	_applyFriction( SLIDE_FRICTION )
@@ -166,8 +164,6 @@ func whileSlide( inputVector : Vector2 ) -> void:
 		fall()
 	elif Input.is_action_pressed("JUMP"):
 		jump()
-	elif Input.is_action_pressed("DEFENSIVE_ACTION"):
-		defensiveGroundAttack()
 
 func whileRun( inputVector: Vector2 ) -> void:
 	# Calculate new velocity / friction vectors
@@ -184,26 +180,33 @@ func whileRun( inputVector: Vector2 ) -> void:
 	# Figure out any allowed state changes.
 	if Input.is_action_pressed("DEFENSIVE_ACTION"):
 		slide()
+		return
 	elif Input.is_action_pressed("OFFENSIVE_ACTION"):
 		chargingGroundAttack()
+		return
 	elif Input.is_action_pressed("JUMP"):
-		jump()	
+		jump()
+		return	
 
 	if( velocity.x == 0 ):
 		idle()
-	elif( velocity.y < 0 ):
-		jump()	
+	elif( !is_on_floor() ):
+		fall()
 
 func whileIdle( inputVector: Vector2  ) -> void:
 	# First figure out if we should transition.
 	if Input.is_action_pressed("DEFENSIVE_ACTION"):
 		defensiveGroundAttack()
+		return
 	elif Input.is_action_pressed("OFFENSIVE_ACTION"):
 		offensiveGroundAttack()
+		return
 	elif Input.is_action_pressed("JUMP"):
 		jump()
+		return
 	elif ( inputVector.y > 0 ):
 		crouched()
+		return
 
 	# Now calculate new velocity / friction vectors
 	if( inputVector.x == 0 ):
@@ -213,8 +216,10 @@ func whileIdle( inputVector: Vector2  ) -> void:
 		run()
 
 # List of functions that actually change state, and provide any one-t  ime change to variables. These functions should only be called on a state change.
+# And generally are related to an actual button press.
 func chargingGroundAttack() -> void:
-	pass
+	velocity.x += RUNNING_GROUND_ATTACK_FORCE
+	stateMachine.travel("OFFENSIVE_GROUND_ATTACK")
 
 func defensiveGroundAttack() -> void: 
 	#velocity.x = 0

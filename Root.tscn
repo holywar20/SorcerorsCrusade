@@ -26,7 +26,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing_size = 4
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0627451, 0.576471, 0.0313726, 1 )
 border_color = Color( 0.0196078, 0.580392, 0.972549, 1 )
 corner_radius_top_left = 5
@@ -35,7 +35,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 anti_aliasing_size = 4
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.294118, 0.0627451, 0.74902, 1 )
 border_color = Color( 0.0196078, 0.580392, 0.972549, 1 )
 corner_radius_top_left = 5
@@ -73,7 +73,7 @@ margin_right = 96.0
 margin_bottom = 80.7962
 rect_pivot_offset = Vector2( 190.7, 29 )
 theme = ExtResource( 4 )
-custom_styles/fg = SubResource( 3 )
+custom_styles/fg = SubResource( 2 )
 custom_styles/bg = ExtResource( 3 )
 value = 50.0
 rounded = true
@@ -88,43 +88,41 @@ margin_right = 96.0
 margin_bottom = 57.0
 rect_pivot_offset = Vector2( 190.7, 29 )
 theme = ExtResource( 4 )
-custom_styles/fg = SubResource( 4 )
+custom_styles/fg = SubResource( 3 )
 custom_styles/bg = ExtResource( 3 )
 value = 50.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-anchor_left = 0.086
-anchor_top = 0.413
-anchor_right = 0.086
-anchor_bottom = 0.413
-margin_left = 119.936
-margin_top = 88.2
-margin_right = 343.936
-margin_bottom = 152.2
+[node name="Panel" type="Control" parent="CanvasLayer"]
+margin_left = 8.0
+margin_top = 304.0
+margin_right = 232.0
+margin_bottom = 368.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 217.0
+margin_bottom = 63.0
 custom_constants/separation = -4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LT" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_right = 31.0
-margin_bottom = 64.0
+margin_right = 29.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LT"]
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 32.0
 texture = ExtResource( 13 )
 stretch_mode = 4
@@ -134,7 +132,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/LT"]
 margin_top = 32.0
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 56.0
 texture = ExtResource( 16 )
 stretch_mode = 4
@@ -143,9 +141,9 @@ __meta__ = {
 }
 
 [node name="LB" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 27.0
-margin_right = 59.0
-margin_bottom = 64.0
+margin_left = 25.0
+margin_right = 57.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
@@ -169,14 +167,14 @@ __meta__ = {
 }
 
 [node name="A" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 55.0
-margin_right = 86.0
-margin_bottom = 64.0
+margin_left = 53.0
+margin_right = 82.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/A"]
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 16.0
 texture = ExtResource( 5 )
 stretch_mode = 4
@@ -186,7 +184,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/A"]
 margin_top = 16.0
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 40.0
 texture = ExtResource( 7 )
 stretch_mode = 4
@@ -195,14 +193,14 @@ __meta__ = {
 }
 
 [node name="B" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 82.0
-margin_right = 114.0
-margin_bottom = 64.0
+margin_left = 78.0
+margin_right = 107.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/B"]
-margin_right = 32.0
+margin_right = 29.0
 margin_bottom = 16.0
 texture = ExtResource( 10 )
 stretch_mode = 4
@@ -212,7 +210,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/B"]
 margin_top = 16.0
-margin_right = 32.0
+margin_right = 29.0
 margin_bottom = 40.0
 texture = ExtResource( 6 )
 stretch_mode = 4
@@ -221,14 +219,14 @@ __meta__ = {
 }
 
 [node name="Y" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 110.0
-margin_right = 141.0
-margin_bottom = 64.0
+margin_left = 103.0
+margin_right = 132.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/Y"]
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 16.0
 texture = ExtResource( 11 )
 stretch_mode = 4
@@ -238,7 +236,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/Y"]
 margin_top = 16.0
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 40.0
 texture = ExtResource( 16 )
 stretch_mode = 4
@@ -247,14 +245,14 @@ __meta__ = {
 }
 
 [node name="X" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 137.0
-margin_right = 168.0
-margin_bottom = 64.0
+margin_left = 128.0
+margin_right = 157.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/X"]
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 16.0
 texture = ExtResource( 12 )
 stretch_mode = 4
@@ -264,7 +262,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/X"]
 margin_top = 16.0
-margin_right = 31.0
+margin_right = 29.0
 margin_bottom = 40.0
 texture = ExtResource( 16 )
 stretch_mode = 4
@@ -273,9 +271,9 @@ __meta__ = {
 }
 
 [node name="RB" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 164.0
-margin_right = 196.0
-margin_bottom = 64.0
+margin_left = 153.0
+margin_right = 185.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
@@ -299,14 +297,14 @@ __meta__ = {
 }
 
 [node name="RT" type="VBoxContainer" parent="CanvasLayer/Panel/HBoxContainer"]
-margin_left = 192.0
-margin_right = 224.0
-margin_bottom = 64.0
+margin_left = 181.0
+margin_right = 210.0
+margin_bottom = 56.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="Button" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RT"]
-margin_right = 32.0
+margin_right = 29.0
 margin_bottom = 32.0
 texture = ExtResource( 9 )
 stretch_mode = 4
@@ -316,7 +314,7 @@ __meta__ = {
 
 [node name="Ability" type="TextureRect" parent="CanvasLayer/Panel/HBoxContainer/RT"]
 margin_top = 32.0
-margin_right = 32.0
+margin_right = 29.0
 margin_bottom = 56.0
 texture = ExtResource( 15 )
 stretch_mode = 4
